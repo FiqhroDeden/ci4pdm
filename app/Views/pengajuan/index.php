@@ -37,10 +37,10 @@
                                         <td><?= $d['nama_lengkap']; ?></td>
                                         <td><?= $d['prodi']; ?></td>
                                         <td>
-                                            <div class="badge badge-<?= ($d['status'] == 'baru') ? 'warning' : 'info'; ?> badge-pill"><?= $d['status']; ?></div>
+                                            <div class="badge badge-<?= ($d['status'] == 'Menunggu Konfirmasi') ? 'warning' : 'info'; ?> badge-pill"><?= $d['status']; ?></div>
                                         </td>
                                         <td>
-                                            <a href="/pengajuan/<?= $d['id']; ?>"><button class="btn btn-info"><span class="fa fa-list"></span></button></a>
+                                            <a href="/pengajuan/<?= $d['id']; ?>"><button class="btn btn-info btn-sm"><span class="fa fa-cog"></span></button></a>
                                         </td>
 
                                     </tr>

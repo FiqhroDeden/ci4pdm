@@ -35,10 +35,10 @@
                                         <td><?= $d['prodi']; ?></td>
                                         <td><?= $d['created_at']; ?></td>
                                         <td>
-                                            <div class="badge badge-<?= ($d['status'] == 'Sedang Di Tinjau') ? 'warning' : 'info'; ?> badge-pill"><?= $d['status']; ?></div>
+                                            <div class="badge badge-<?= ($d['status'] == 'Menunggu Konfirmasi') ? 'warning' : 'info'; ?> badge-pill"><?= $d['status']; ?></div>
                                         </td>
                                         <td>
-                                            <a href="/riwayatpdm/<?= $d['id']; ?>"><button class="btn btn-info"><span class="fa fa-list"></span></button></a>
+                                            <a href="/riwayatpdm/<?= $d['id']; ?>"><button class="btn btn-info btn-sm"><span class="fa fa-eye"></span></button></a>
                                         </td>
 
                                     </tr>

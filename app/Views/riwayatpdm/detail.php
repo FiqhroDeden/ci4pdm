@@ -8,6 +8,7 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">Detail Pengajuan</h6>
+
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -17,7 +18,7 @@
                                     <td>Nomor Induk Mahasiswa :</td>
                                     <td><?= $datapdm['nim']; ?></td>
                                 </tr>
-                                <tr style="color: red;">
+                                <tr>
                                     <td>Nama Mahasiswa :</td>
                                     <td><?= $datapdm['nama_lengkap']; ?></td>
                                 </tr>
@@ -45,6 +46,10 @@
                                     <td>Waktu Pengajuan :</td>
                                     <td><?= $datapdm['created_at']; ?></td>
                                 </tr>
+                                <tr>
+                                    <td style="color: red">Keterangan :</td>
+                                    <td><?= $datapdm['keterangan']; ?></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -63,50 +68,45 @@
                             <tbody>
                                 <tr>
                                     <td>File Akte :</td>
-                                    <td>
-                                        <a href="/file/akte/<?= $datapdm['akte']; ?>"><?= $datapdm['akte']; ?></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>File KTM(Kartu Tanda Mahasiswa) :</td>
-                                    <td><a href="/file/ktm/<?= $datapdm['ktm']; ?>"><?= $datapdm['ktm']; ?></a></td>
-                                </tr>
-                                <tr>
-                                    <td>File Ijasah/Transkip Nilai :</td>
-                                    <td><a href="/file/ijasah/<?= $datapdm['ijasah']; ?>"><?= $datapdm['ijasah']; ?></a></td>
+                                    <?php if ($datapdm['akte'] == 'tidakada') { ?>
+                                        <td>Tidak Ada</td>
+                                    <?php } else { ?>
+                                        <td><a href="/file/akte/<?= $datapdm['akte']; ?>">Lihat File</a></td>
+                                    <?php } ?>
 
                                 </tr>
                                 <tr>
-                                    <td>File Surat Penerimaan :</td>
-                                    <td>
-                                        <a href="/file/surat/<?= $datapdm['surat']; ?>"><?= $datapdm['surat']; ?></a>
-                                    </td>
+                                    <td>File KTM(Kartu Tanda Mahasiswa) :</td>
+                                    <?php if ($datapdm['ktm'] == 'tidakada') { ?>
+                                        <td>Tidak Ada</td>
+                                    <?php } else { ?>
+                                        <td><a href="/file/ktm/<?= $datapdm['ktm']; ?>">Lihat File</a></td>
+                                    <?php } ?>
+                                </tr>
+                                <tr>
+                                    <td>File Ijasah/Transkip Nilai :</td>
+                                    <?php if ($datapdm['ijasah'] == 'tidakada') { ?>
+                                        <td>Tidak Ada</td>
+                                    <?php } else { ?>
+                                        <td><a href="/file/ijasah/<?= $datapdm['ijasah']; ?>">Lihat File</a></td>
+                                    <?php } ?>
+
                                 </tr>
 
                             </tbody>
                         </table>
 
                     </div>
+                    <div class="">
+                        <a href="javascript:window.history.go(-1);">
+                            <button class=" btn btn-danger btn-sm"><i class="fa fa-arrow-left"></i> Kembali</button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
 
-        <div class="col">
-            <form action="/pengajuan/<?= $datapdm['id']; ?>" method="post" class="d-inline">
-                <?= csrf_field(); ?>
-                <input type="hidden" name="_method" value="EDIT">
-                <button type="submit" class="btn btn-warning" "><span class=" fa fa-edit"></span> Edit</button>
-            </form>
-
-
-        </div>
-
-
-
-
-    </div>
 </div>
 
 <?= $this->endSection(); ?>

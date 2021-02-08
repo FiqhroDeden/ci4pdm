@@ -98,13 +98,6 @@ class Pdm extends BaseController
                     'ext_in' => 'File yang anda coba upload bukan file PDF'
                 ]
             ],
-            'surat' => [
-                'rules' => 'max_size[surat,1024]|ext_in[surat,pdf]',
-                'errors' => [
-                    'max_size' => 'File yang anda coba upload melebihi 1MB',
-                    'ext_in' => 'File yang anda coba upload bukan file PDF'
-                ]
-            ]
 
         ])) {
             return redirect()->to('/pdm')->withInput();
@@ -114,7 +107,7 @@ class Pdm extends BaseController
         $fileAkte = $this->request->getFile('akte');
         $fileKtm = $this->request->getFile('ktm');
         $fileIjasah = $this->request->getFile('ijasah');
-        $fileSurat = $this->request->getFile('surat');
+
 
         if ($fileAkte->getError() == 4) {
             $namaAkte = 'tidakada';
@@ -137,12 +130,7 @@ class Pdm extends BaseController
             $fileIjasah->move('file/ijasah', $namaIjasah);
         }
 
-        if ($fileSurat->getError() == 4) {
-            $namaSurat = 'tidakada';
-        } else {
-            $namaSurat = $fileSurat->getRandomName();
-            $fileSurat->move('file/surat_penerimaan', $namaSurat);
-        }
+
         $getdata = $this->request->getVar('data[]');
         $data = array('getdata' => implode(",", $getdata),);
 
@@ -160,11 +148,10 @@ class Pdm extends BaseController
             'akte' => $namaAkte,
             'ktm' => $namaKtm,
             'ijasah' => $namaIjasah,
-            'surat' => $namaSurat,
             'status' => $this->request->getVar('status')
         ]);
 
-        session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
+        session()->setFlashdata('pesan', 'Data berhasil ditambahkan. silahkan mengecek menu riwayat perubahan data untuk memantau pengajuan anda');
         return redirect()->to('/pdm');
     }
 

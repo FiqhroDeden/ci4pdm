@@ -8,7 +8,7 @@ class PdmModel extends Model
 {
     protected $table = 'datapdm';
     protected $useTimestamps = true;
-    protected $allowedFields = ['id_pengirim', 'nama_lengkap', 'nim', 'nomor', 'fakultas', 'prodi', 'lokasi_data', 'data', 'akte', 'ktm', 'ijasah', 'surat', 'status', 'keterangan'];
+    protected $allowedFields = ['id_pengirim', 'nama_lengkap', 'nim', 'nomor', 'fakultas', 'prodi', 'lokasi_data', 'data', 'akte', 'ktm', 'ijasah', 'status', 'keterangan'];
 
     public function getPdm($id = false)
     {

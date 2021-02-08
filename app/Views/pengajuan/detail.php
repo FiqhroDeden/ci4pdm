@@ -49,15 +49,18 @@
                                             <input type="hidden" name="_method" value="SETSTATUS">
                                             <select class="form-control " id="status" name="status" value="">
 
-                                                <option selected value=" <?= $datapdm['status']; ?>"><?= $datapdm['status']; ?></option>
-                                                <option value="baru">Baru</option>
-                                                <option value="Diproses">Diproses</option>
-                                                <option value="Selesai">Selesai</option>
-                                                <option value="Ditolak">Ditolak</option>
+                                                <option value="Menunggu Konfirmasi" <?php if ($datapdm['status'] == 'Menunggu Konfirmasi') : ?>selected <?php endif; ?>>Menunggu Konfirmasi</option>
+                                                <option value="Diproses" <?php if ($datapdm['status'] == 'Diproses') : ?>selected <?php endif; ?>>Diproses</option>
+                                                <option value="Selesai" <?php if ($datapdm['status'] == 'Selesai') : ?>selected <?php endif; ?>>Selesai</option>
+                                                <option value="Ditolak" <?php if ($datapdm['status'] == 'Ditolak') : ?>selected <?php endif; ?>>Ditolak</option>
 
                                             </select>
 
                                     </td>
+                                </tr>
+                                <tr>
+                                    <td>Beri Keterangan :</td>
+                                    <td><textarea class="form-control" name="keterangan" id="" cols="30" rows="10"></textarea><?= $datapdm['keterangan']; ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -101,39 +104,26 @@
                                     <?php } ?>
 
                                 </tr>
-                                <tr>
-                                    <td>File Surat Penerimaan :</td>
-                                    <?php if ($datapdm['surat'] == 'tidakada') { ?>
-                                        <td>Tidak Ada</td>
-                                    <?php } else { ?>
-                                        <td><a href="/file/surat/<?= $datapdm['surat']; ?>">Lihat File</a></td>
-                                    <?php } ?>
-                                </tr>
+
 
                             </tbody>
                         </table>
+                        <a href="javascript:window.history.go(-1);">
+                            <button class=" btn btn-warning btn-sm"><i class="fa fa-arrow-left"></i> Kembali</button>
+                        </a>
+                        <button type="submit" class="btn btn-primary btn-sm" onclick="return confirm('apakah anda yakin?');"><span class="fa fa-check"></span> Set Status</button>
+                        </form>
+                        <form action="/pengajuan/<?= $datapdm['id']; ?>" method="post" class="d-inline">
+                            <?= csrf_field(); ?>
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('apakah anda yakin?');"><span class="fa fa-trash"></span> Delete</button>
+                        </form>
                     </div>
                 </div>
+
             </div>
-        </div>
-    </div>
-    <div class="row">
-
-        <div class="col">
-            <button type="submit" class="btn btn-info" onclick="return confirm('apakah anda yakin?');"><span class="fa fa-check"></span> Ubah Status</button>
-            </form>
-            <form action="/pengajuan/<?= $datapdm['id']; ?>" method="post" class="d-inline">
-                <?= csrf_field(); ?>
-                <input type="hidden" name="_method" value="DELETE">
-                <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?');"><span class="fa fa-trash"></span> Delete</button>
-            </form>
-
 
         </div>
-
-
-
-
     </div>
 </div>
 

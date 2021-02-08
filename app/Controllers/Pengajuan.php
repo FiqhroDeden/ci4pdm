@@ -37,10 +37,12 @@ class Pengajuan extends BaseController
 
     public function setstatus($id)
     {
-        $this->PdmModel->save([
+        $data = [
             'id' => $id,
-            'status' => $this->request->getVar('status')
-        ]);
+            'status' => $this->request->getVar('status'),
+            'keterangan' => $this->request->getVar('keterangan')
+        ];
+        $this->PdmModel->update($id, $data);
         session()->setFlashdata('pesan', 'Status Berhasil Diubah.');
         return redirect()->to('/pengajuan');
     }

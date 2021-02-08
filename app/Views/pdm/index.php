@@ -13,6 +13,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Pengajuan PDM</h6>
         </div>
         <div class="card-body">
+
             <form action="/pdm/save" method="post" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
 
@@ -49,7 +50,7 @@
                     <label for="fakultas" class="col-sm-4 col-form-label">Pilih Fakultas</label>
                     <div class="col-sm-4">
                         <select class="form-control <?= ($validation->hasError('fakultas')) ? 'is-invalid' : ''; ?>" id="fakultas" name="fakultas" value="<?= old('fakultas'); ?>">
-                            <option selected"></option>
+                            <option></option>
                             <?php foreach ($fakultas as $f) : ?>
                                 <option value="<?= $f['nama_fakultas']; ?>"><?= $f['nama_fakultas']; ?></option>
                             <?php endforeach; ?>
@@ -123,8 +124,8 @@
 
                 </div>
                 <div class="from-group row">
-                    <label for="akte" class="col-sm-4 col-form-laber">Upload Akte kelahiran/surat lahir/kartu keluarga</label>
-                    <div class="col-6">
+                    <label for="akte" class="col-sm-4 col-xs-12 col-form-laber">Upload Akte kelahiran/surat lahir/kartu keluarga</label>
+                    <div class="col-sm-6 col-xs-12">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input <?= ($validation->hasError('akte')) ? 'is-invalid' : ''; ?>" id="akte" name="akte">
                             <div class="invalid-feedback">
@@ -136,8 +137,8 @@
                 </div>
                 <br>
                 <div class="from-group row">
-                    <label for="ktm" class="col-sm-4 col-form-laber">Upload KTM (Kartu Tanda Mahasiswa)</label>
-                    <div class="col-6">
+                    <label for="ktm" class="col-sm-4 col-xs-12 col-form-laber">Upload KTM (Kartu Tanda Mahasiswa)</label>
+                    <div class="col-sm-6 col-xs-12">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input <?= ($validation->hasError('ktm')) ? 'is-invalid' : ''; ?>" id="ktm" name="ktm">
                             <div class="invalid-feedback">
@@ -149,8 +150,8 @@
                 </div>
                 <br>
                 <div class="from-group row">
-                    <label for="ijasah" class="col-sm-4 col-form-laber">Upload Ijasah dan Transkrip (jika sudah lulus)</label>
-                    <div class="col-6">
+                    <label for="ijasah" class="col-sm-4 col-xs-12 col-form-laber">Upload Ijasah dan Transkrip (jika sudah lulus)</label>
+                    <div class="col-sm-6 col-xs-12">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input <?= ($validation->hasError('ijasah')) ? 'is-invalid' : ''; ?>" id="ijasah" name="ijasah">
                             <div class="invalid-feedback">
@@ -161,33 +162,21 @@
                     </div>
                 </div>
                 <br>
-                <div class="from-group row">
-                    <label for="suratpenerimaan" class="col-sm-4 col-form-laber">Surat Penerimaan Mahasiswa</label>
-                    <div class="col-6">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input <?= ($validation->hasError('surat')) ? 'is-invalid' : ''; ?>" id="surat" name="surat" ">
-                    <div class=" invalid-feedback">
-                            <?= $validation->getError('ktm'); ?>
-                        </div>
-                        <label class="custom-file-label" for="surat">Pilih file</label>
-                    </div>
+                <div class="col-sm-10">
+                    <button class="btn btn-primary" type="submit">Submit</button>
                 </div>
 
         </div>
 
     </div>
+    <div class="form-group row">
 
-</div>
-<div class="form-group row">
-    <div class="col-sm-10">
-        <button class="btn btn-primary" type="submit">Submit</button>
     </div>
-</div>
-<br>
+    <br>
 
 
 
-</form>
+    </form>
 
 
 

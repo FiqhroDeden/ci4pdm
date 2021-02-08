@@ -17,7 +17,7 @@
                 <?= csrf_field(); ?>
 
                 <input type="hidden" name="id_pengirim" value="<?= user_id(); ?>">
-                <input type="hidden" name="status" value="Sedang Di Tinjau">
+                <input type="hidden" name="status" value="Menunggu Konfirmasi">
                 <div class="form-group row">
                     <label for="nama" class="col-sm-4 col-form-label">Nama Lengkap</label>
                     <div class="col-sm-6">

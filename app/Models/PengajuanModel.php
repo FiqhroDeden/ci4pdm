@@ -38,9 +38,24 @@ class PengajuanModel extends Model
                 //             ->findAll();
                 //     endforeach;
                 // endforeach;
+                // $id = user_id();
+                // $fakultas = $this->select('*')->from('users')->where('users.id', $id)->get()->getResultArray();
 
-                return $this->select('*')
-                ->join('users u', 'u.hakfakultas = datapdm.')
+                // foreach ($fakultas as $f) :
+                //     $array = $f['hakfakultas'];
+                //     $data = explode(",", $array);
+                // endforeach;
+                // foreach ($data as $a) {
+                //     $query = $this->select('*')
+
+
+                //         ->orlike('fakultas', 'teknik')
+
+                //         ->get()
+                //         ->getResultArray();
+                // }
+                // return $query;
+                return $this->orderBy('id', 'DESC')->findAll();
             }
 
 

@@ -23,6 +23,7 @@ $(function () {
         $("#no_hp").val(data.no_hp);
         $("#email").val(data.email);
         $("#username").val(data.username);
+        $("#oldpass").val(data.password_hash);
         $("#password").val(data.password_hash);
       },
     });

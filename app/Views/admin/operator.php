@@ -162,7 +162,8 @@
                     <form class="needs-validation" action="/admin/update/" method="POST" novalidate="">
                         <input type="hidden" name="group_id" value="3">
                         <input type="hidden" name="id" id="id">
-                        <input type="hidden" name="oldpass" id="password">
+                        <input type="hidden" name="oldpass" id="oldpass">
+                        <input type="hidden" name="passwordnow" id="password">
 
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">NIP</label>
@@ -226,7 +227,8 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Password</label>
                             <div class="col-sm-9">
-                                <input type="password" name="password_hash" id="password" class="form-control" required="">
+
+                                <input type="password" name="password_hash" class="form-control">
                                 <div class="invalid-feedback">
                                     Password wajib diisi?.
                                 </div>

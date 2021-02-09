@@ -10,6 +10,10 @@ class PengajuanModel extends Model
     protected $useTimestamps = true;
     protected $allowedFields = ['id_pengirim', 'nama_lengkap', 'nim', 'nomor', 'fakultas', 'prodi', 'lokasi_data', 'data', 'akte', 'ktm', 'ijasah', 'surat', 'status', 'keterangan'];
 
+    public function pdm($id = false)
+    {
+        return $this->findAll();
+    }
 
     public function getPdm($id = false)
     {
@@ -41,21 +45,26 @@ class PengajuanModel extends Model
                 // $id = user_id();
                 // $fakultas = $this->select('*')->from('users')->where('users.id', $id)->get()->getResultArray();
 
-                // foreach ($fakultas as $f) :
-                //     $array = $f['hakfakultas'];
-                //     $data = explode(",", $array);
-                // endforeach;
-                // foreach ($data as $a) {
-                //     $query = $this->select('*')
+                // <<<<<<< HEAD
+                //                 // foreach ($fakultas as $f) :
+                //                 //     $array = $f['hakfakultas'];
+                //                 //     $data = explode(",", $array);
+                //                 // endforeach;
+                //                 // foreach ($data as $a) {
+                //                 //     $query = $this->select('*')
 
 
-                //         ->orlike('fakultas', 'teknik')
+                //                 //         ->orlike('fakultas', 'teknik')
 
-                //         ->get()
-                //         ->getResultArray();
-                // }
-                // return $query;
-                return $this->orderBy('id', 'DESC')->findAll();
+                //                 //         ->get()
+                //                 //         ->getResultArray();
+                //                 // }
+                //                 // return $query;
+                //                 return $this->orderBy('id', 'DESC')->findAll();
+                // =======
+                return $this->select('*')
+                    ->join('users u', 'u.hakfakultas = datapdm.');
+                // >>>>>>> operators_list
             }
 
 

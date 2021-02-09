@@ -14,7 +14,7 @@ class Pengajuan extends BaseController
     {
         $data = [
             'title' => 'Daftar Pengajuan PDM',
-            'datapdm' => $this->PdmModel->getPdm()
+            'datapdm' => $this->PdmModel->pdm()
         ];
 
 

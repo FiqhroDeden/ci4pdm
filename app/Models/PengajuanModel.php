@@ -10,6 +10,10 @@ class PengajuanModel extends Model
     protected $useTimestamps = true;
     protected $allowedFields = ['id_pengirim', 'nama_lengkap', 'nim', 'nomor', 'fakultas', 'prodi', 'lokasi_data', 'data', 'akte', 'ktm', 'ijasah', 'surat', 'status'];
 
+    public function pdm($id = false)
+    {
+        return $this->findAll();
+    }
 
     public function getPdm($id = false)
     {
@@ -40,7 +44,7 @@ class PengajuanModel extends Model
                 // endforeach;
 
                 return $this->select('*')
-                ->join('users u', 'u.hakfakultas = datapdm.')
+                    ->join('users u', 'u.hakfakultas = datapdm.');
             }
 
 

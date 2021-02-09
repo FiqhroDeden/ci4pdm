@@ -78,21 +78,21 @@ class Pdm extends BaseController
                 ]
             ],
             'akte' => [
-                'rules' => 'max_size[akte,1024]|ext_in[akte,pdf]',
+                'rules' => 'max_size[akte,3024]|ext_in[akte,pdf]',
                 'errors' => [
                     'max_size' => 'File yang anda coba upload melebihi 1MB',
                     'ext_in' => 'File yang anda coba upload bukan file PDF'
                 ]
             ],
             'ktm' => [
-                'rules' => 'max_size[ktm,1024]|ext_in[ktm,pdf]',
+                'rules' => 'max_size[ktm,3024]|ext_in[ktm,pdf]',
                 'errors' => [
                     'max_size' => 'File yang anda coba upload melebihi 1MB',
                     'ext_in' => 'File yang anda coba upload bukan file PDF'
                 ]
             ],
             'ijasah' => [
-                'rules' => 'max_size[ijasah,1024]|ext_in[ijasah,pdf]',
+                'rules' => 'max_size[ijasah,3024]|ext_in[ijasah,pdf]',
                 'errors' => [
                     'max_size' => 'File yang anda coba upload melebihi 1MB',
                     'ext_in' => 'File yang anda coba upload bukan file PDF'

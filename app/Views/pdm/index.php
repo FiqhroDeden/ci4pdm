@@ -127,11 +127,12 @@
                     <label for="akte" class="col-sm-4 col-xs-12 col-form-laber">Upload Akte kelahiran/surat lahir/kartu keluarga</label>
                     <div class="col-sm-6 col-xs-12">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input <?= ($validation->hasError('akte')) ? 'is-invalid' : ''; ?>" id="akte" name="akte">
+                            <input type="file" class="form-control <?= ($validation->hasError('akte')) ? 'is-invalid' : ''; ?>" id="akte" name="akte">
                             <div class="invalid-feedback">
                                 <?= $validation->getError('akte'); ?>
                             </div>
-                            <label class="custom-file-label" for="akte">Pilih file</label>
+                            <small>File yang di upload harus berformat .pdf dan ukurannya tidak lebih dari 2MB</small>
+
                         </div>
                     </div>
                 </div>
@@ -140,11 +141,11 @@
                     <label for="ktm" class="col-sm-4 col-xs-12 col-form-laber">Upload KTM (Kartu Tanda Mahasiswa)</label>
                     <div class="col-sm-6 col-xs-12">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input <?= ($validation->hasError('ktm')) ? 'is-invalid' : ''; ?>" id="ktm" name="ktm">
+                            <input type="file" class="form-control <?= ($validation->hasError('ktm')) ? 'is-invalid' : ''; ?>" id="ktm" name="ktm">
                             <div class="invalid-feedback">
                                 <?= $validation->getError('ktm'); ?>
                             </div>
-                            <label class="custom-file-label" for="ktm">Pilih file</label>
+                            <small>File yang di upload harus berformat .pdf dan ukurannya tidak lebih dari 2MB</small>
                         </div>
                     </div>
                 </div>
@@ -153,17 +154,19 @@
                     <label for="ijasah" class="col-sm-4 col-xs-12 col-form-laber">Upload Ijasah dan Transkrip (jika sudah lulus)</label>
                     <div class="col-sm-6 col-xs-12">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input <?= ($validation->hasError('ijasah')) ? 'is-invalid' : ''; ?>" id="ijasah" name="ijasah">
+                            <input type="file" class="form-control <?= ($validation->hasError('ijasah')) ? 'is-invalid' : ''; ?>" id="ijasah" name="ijasah">
                             <div class="invalid-feedback">
                                 <?= $validation->getError('ijasah'); ?>
                             </div>
-                            <label class="custom-file-label" for="ijasah">Pilih file</label>
+                            <small>File yang di upload harus berformat .pdf dan ukurannya tidak lebih dari 2MB</small>
                         </div>
                     </div>
                 </div>
                 <br>
                 <div class="col-sm-10">
-                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <button class="btn btn-primary btn-sm" type="submit"><span class="fa fa-plus"></span> Submit</button>
+                    <a href="javascript:window.history.go(-1);" class="btn btn-warning btn-sm"><i class="fa fa-arrow-left"></i> Kembali
+                    </a>
                 </div>
 
         </div>

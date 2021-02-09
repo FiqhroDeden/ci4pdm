@@ -108,8 +108,7 @@
 
                             </tbody>
                         </table>
-                        <a href="javascript:window.history.go(-1);">
-                            <button class=" btn btn-warning btn-sm"><i class="fa fa-arrow-left"></i> Kembali</button>
+                        <a href="javascript:window.history.go(-1);" class="btn btn-warning btn-sm"><i class="fa fa-arrow-left"></i> Kembali
                         </a>
                         <button type="submit" class="btn btn-primary btn-sm" onclick="return confirm('apakah anda yakin?');"><span class="fa fa-check"></span> Set Status</button>
                         </form>

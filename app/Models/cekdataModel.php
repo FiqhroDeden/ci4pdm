@@ -12,25 +12,26 @@ class cekdataModel extends Model
         $query = $this->db->table('users')
             ->where('id', $id)
             ->get();
-        foreach ($query->getResultArray() as $nim) :
+        foreach ($query->getResultArray() as $data) :
             return $this->db->table('siakad')
                 // ->join('siakad', 'siakad.nim = users.username')
-                ->where('nim', $nim['nim'])
+                ->where('nim', $data['nim'])
+                // ->orWhere('nama_lengkap', $data['fullname'])
                 ->get()->getResultArray();
         endforeach;
     }
     public function pddikti()
     {
 
-
         $id = user_id();
         $query = $this->db->table('users')
             ->where('id', $id)
             ->get();
-        foreach ($query->getResultArray() as $nim) :
+        foreach ($query->getResultArray() as $data) :
             return $this->db->table('pddikti')
                 // ->join('siakad', 'siakad.nim = users.username')
-                ->where('nim', $nim['nim'])
+                ->where('nim', $data['nim'])
+                // ->orWhere('nama_lengkap', $data['fullname'])
                 ->get()->getResultArray();
         endforeach;
     }

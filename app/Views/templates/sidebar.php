@@ -33,19 +33,7 @@
         </li>
 
     <?php endif; ?>
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Users Profile
-    </div>
 
-    <!-- Nav Item - MyProfile -->
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('operator'); ?>">
-            <i class="fas fa-fw fa-users"></i>
-            <span>My Profile</span></a>
-    </li>
     <?php if (in_groups('mahasiswa')) : ?>
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url('cekdata'); ?>">
@@ -54,24 +42,6 @@
         </li>
     <?php endif; ?>
     <?php if (in_groups('admin')) : ?>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Pengajuan
-        </div>
-
-        <!-- Nav Item - Charts -->
-
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('pengajuan'); ?>">
-                <i class="fas fa-fw fa-list"></i>
-                <span>Daftar Pengajuan</span></a>
-        </li>
-    <?php endif; ?>
-    <?php if (in_groups('operator')) : ?>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
@@ -111,7 +81,27 @@
         </li>
     <?php endif; ?>
     <?php if (in_groups('operator')) : ?>
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('dashboard/index'); ?>">
+                <i class="fas fa-fw fa-code"></i>
+                <span>Dashboard</span></a>
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider">
 
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Pengajuan
+        </div>
+
+        <!-- Nav Item - Charts -->
+
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('pengajuan'); ?>">
+                <i class="fas fa-fw fa-list"></i>
+                <span>Daftar Pengajuan</span></a>
+        </li>
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url('pdm'); ?>">
                 <i class="fas fa-fw fa-user-edit"></i>

@@ -69,7 +69,8 @@ class Admin extends BaseController
 	{
 		$id = $this->request->getVar('id');
 		$oldpass = $this->request->getVar('oldpass');
-		$pass = $this->request->getVar('password_hash');
+		$pass = $this->request->getVar('passwordnow');
+		$password = $this->request->getVar('password_hash');
 
 		if ($oldpass == $pass) {
 			$users = [
@@ -81,7 +82,7 @@ class Admin extends BaseController
 				'username' => $this->request->getVar('username'),
 
 			];
-		} else {
+		} elseif ($password != null) {
 			$options = [
 				'cost' => 10,
 			];

@@ -162,7 +162,7 @@
                     <form class="needs-validation" action="/admin/update/" method="POST" novalidate="">
                         <input type="hidden" name="group_id" value="3">
                         <input type="hidden" name="id" id="id">
-                        <input type="hidden" name="oldpass" id="oldpass">
+                        <input type="hidden" name="oldpass" value="<?= $user->password_hash; ?>">
                         <input type="hidden" name="passwordnow" id="password">
 
                         <div class="form-group row">

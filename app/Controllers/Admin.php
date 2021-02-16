@@ -72,7 +72,7 @@ class Admin extends BaseController
 		$pass = $this->request->getVar('passwordnow');
 		$password = $this->request->getVar('password_hash');
 
-		if ($oldpass == $pass) {
+		if ($password == null) {
 			$users = [
 				'nim' => $this->request->getVar('nim'),
 				'fullname' => $this->request->getVar('fullname'),
@@ -86,7 +86,7 @@ class Admin extends BaseController
 			$options = [
 				'cost' => 10,
 			];
-			$password = $this->request->getVar('password_hash');
+			// $password = $this->request->getVar('password_hash');
 			$pass_hash = password_hash(base64_encode(
 				hash('sha384', $password, true)
 			), PASSWORD_DEFAULT, $options);
@@ -125,7 +125,7 @@ class Admin extends BaseController
 	{
 
 		$data['title'] = 'List Operator';
-		$this->builder->select('users.id as userid, username, fullname, email, name, nama_fakultas');
+		$this->builder->select('users.id as userid, username, fullname, email, name, nama_fakultas, password_hash');
 		$this->builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
 		$this->builder->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
 		$this->builder->join('fakultas', 'fakultas.fakultas_id = users.hakfakultas');

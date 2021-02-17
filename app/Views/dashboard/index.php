@@ -31,7 +31,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php print_r($pdm2) ?> Pengajuan</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-file fa-2x text-gray-300"></i>
+                            <i class="fas fa-file-signature fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php print_r($pdm3) ?> Pengajuan</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-file fa-2x text-gray-300"></i>
+                            <i class="fas fa-file-medical fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php print_r($pdm4) ?> Pengajuan</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-file fa-2x text-gray-300"></i>
+                            <i class="fas fa-file-excel fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>

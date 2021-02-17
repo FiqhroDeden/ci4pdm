@@ -31,11 +31,25 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Operator::index');
 
+// hak akses admin
+$routes->get('/', 'Operator::index');
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/admin/index', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/admin/(:num)', 'Admin::detail/$1', ['filter' => 'role:admin']);
+$routes->get('/admin/operator', 'Admin::operator', ['filter' => 'role:admin']);
+$routes->get('/admin/mahasiswa', 'Admin::mahasiswa', ['filter' => 'role:admin']);
+
+// hak akses pengajuan pdm
+$routes->get('/pengajuan', 'Pengajuan::index', ['filter' => 'role:admin, operator']);
+$routes->get('/pengajuan/index', 'Pengajuan::index', ['filter' => 'role:admin, operator']);
+$routes->get('/pengajuan/(:any)', 'Pengajuan::detail/$1', ['filter' => 'role:admin, operator']);
+
+//hak akses dashboard operator
+$routes->get('/dashboard', 'Dashboard::index', ['filter' => 'role:admin, operator']);
+$routes->get('/dashboard/index', 'Dashboard::index', ['filter' => 'role:admin, operator']);
+
+
 $routes->get('/pengajuan/setstatus/(:segment)', 'pengajuan::setstatus/$1');
 $routes->delete('/pengajuan/(:num)', 'Pengajuan::delete/$1');
 $routes->get('/pengajuan/(:any)', 'Pengajuan::detail/$1');

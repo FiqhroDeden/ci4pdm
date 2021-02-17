@@ -64,7 +64,7 @@
                 <div class="form-group row">
                     <label for="prodi" class="col-sm-4 col-form-label">Pilih Program Studi</label>
                     <div class="col-sm-4">
-                        <select class="form-control <?= ($validation->hasError('prodi')) ? 'is-invalid' : ''; ?>" id="prodi" name="prodi" value="<?= old('prodi'); ?>">
+                        <select class="form-control <?= ($validation->hasError('prodi')) ? 'is-invalid' : ''; ?>" id="prodi" name="prodi" value="<?= old('prodi'); ?>" searchable="Search here..">
                             <option selected></option>
                             <?php foreach ($prodi as $p) : ?>
                                 <option value="<?= $p['nama_prodi']; ?>"><?= $p['nama_prodi']; ?></option>

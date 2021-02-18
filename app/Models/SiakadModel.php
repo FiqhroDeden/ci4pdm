@@ -8,7 +8,7 @@ class SiakadModel extends Model
 {
     protected $table = 'siakad';
     protected $useTimestamps = true;
-    protected $allowedFields = ['nim', 'nama_lengkap'];
+    protected $allowedFields = ['nim', 'nama_lengkap', 'nama_ibu', 'tempat_lahir', 'tanggal_lahir', 'periode_pendaftaran', 'jenis_kelamin'];
 
     public function search($keyword)
     {

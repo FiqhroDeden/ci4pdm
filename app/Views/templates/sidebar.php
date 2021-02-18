@@ -9,10 +9,25 @@
     </a>
     <?php if (in_groups('admin')) : ?>
         <hr class="sidebar-divider my-0">
+
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url('admin/index'); ?>">
                 <i class="fas fa-fw fa-code"></i>
                 <span>Dashboard</span></a>
+        </li>
+        <hr class="sidebar-divider my-0">
+        <div class="sidebar-heading">
+            Data Master
+        </div>
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('pddikti/index'); ?>">
+                <i class="fas fa-fw fa-file"></i>
+                <span>Data Pddikti</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('siakad/index'); ?>">
+                <i class="fas fa-fw fa-file"></i>
+                <span>Data Siakad</span></a>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider my-0">

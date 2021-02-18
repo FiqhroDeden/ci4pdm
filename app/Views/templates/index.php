@@ -17,7 +17,7 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url() ?>/css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -97,12 +97,12 @@
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url() ?>/js/sb-admin-2.min.js"></script>
     <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= base_url() ?>/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url() ?>/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="/js/demo/datatables-demo.js"></script>
-    <script src="/js/script.js"></script>
+    <script src="<?= base_url(); ?>/js/demo/datatables-demo.js"></script>
+    <script src="<?= base_url(); ?>/js/script.js"></script>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>

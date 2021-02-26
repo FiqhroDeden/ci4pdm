@@ -88,6 +88,24 @@
 
                                 </tr>
                                 <tr>
+                                    <td>File KTP :</td>
+                                    <?php if ($datapdm['ktp'] == 'tidakada') { ?>
+                                        <td>Tidak Ada</td>
+                                    <?php } else { ?>
+                                        <td><a href="/file/ktp/<?= $datapdm['ktp']; ?>">Lihat File</a></td>
+                                    <?php } ?>
+
+                                </tr>
+                                <tr>
+                                    <td>File Kartu Keluarga :</td>
+                                    <?php if ($datapdm['kk'] == 'tidakada') { ?>
+                                        <td>Tidak Ada</td>
+                                    <?php } else { ?>
+                                        <td><a href="/file/kk/<?= $datapdm['kk']; ?>">Lihat File</a></td>
+                                    <?php } ?>
+
+                                </tr>
+                                <tr>
                                     <td>File KTM(Kartu Tanda Mahasiswa) :</td>
                                     <?php if ($datapdm['ktm'] == 'tidakada') { ?>
                                         <td>Tidak Ada</td>
@@ -96,11 +114,29 @@
                                     <?php } ?>
                                 </tr>
                                 <tr>
-                                    <td>File Ijasah/Transkip Nilai :</td>
+                                    <td>File Ijasah :</td>
                                     <?php if ($datapdm['ijasah'] == 'tidakada') { ?>
                                         <td>Tidak Ada</td>
                                     <?php } else { ?>
                                         <td><a href="/file/ijasah/<?= $datapdm['ijasah']; ?>">Lihat File</a></td>
+                                    <?php } ?>
+
+                                </tr>
+                                <tr>
+                                    <td>File Transkrip :</td>
+                                    <?php if ($datapdm['transkrip'] == 'tidakada') { ?>
+                                        <td>Tidak Ada</td>
+                                    <?php } else { ?>
+                                        <td><a href="/file/transkrip/<?= $datapdm['transkrip']; ?>">Lihat File</a></td>
+                                    <?php } ?>
+
+                                </tr>
+                                <tr>
+                                    <td>File Ijasah Akte 4 :</td>
+                                    <?php if ($datapdm['akte4'] == 'tidakada') { ?>
+                                        <td>Tidak Ada</td>
+                                    <?php } else { ?>
+                                        <td><a href="/file/akte4/<?= $datapdm['akte4']; ?>">Lihat File</a></td>
                                     <?php } ?>
 
                                 </tr>

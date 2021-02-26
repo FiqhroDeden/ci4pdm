@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group row">
                     <label for="nim" class="col-sm-4 col-form-label">NIM</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <input type="number" class="form-control <?= ($validation->hasError('nim')) ? 'is-invalid' : ''; ?>" id="nim" name="nim" value="<?= old('nim'); ?>">
                         <div class="invalid-feedback">
                             <?= $validation->getError('nim'); ?>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="form-group row">
                     <label for="nomor" class="col-sm-4 col-form-label">Nomor Hp/Wa</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <input type="number" class="form-control <?= ($validation->hasError('nomor')) ? 'is-invalid' : ''; ?>" id="nomor" name="nomor" value="<?= old('nomor'); ?>">
                         <div class="invalid-feedback">
                             <?= $validation->getError('nomor'); ?>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="form-group row">
                     <label for="fakultas" class="col-sm-4 col-form-label">Pilih Fakultas</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <select class="form-control <?= ($validation->hasError('fakultas')) ? 'is-invalid' : ''; ?>" id="fakultas" name="fakultas" value="<?= old('fakultas'); ?>">
                             <option></option>
                             <?php foreach ($fakultas as $f) : ?>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="form-group row">
                     <label for="prodi" class="col-sm-4 col-form-label">Pilih Program Studi</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <select class="form-control <?= ($validation->hasError('prodi')) ? 'is-invalid' : ''; ?>" id="prodi" name="prodi" value="<?= old('prodi'); ?>" searchable="Search here..">
                             <option selected></option>
                             <?php foreach ($prodi as $p) : ?>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="form-group row">
                     <label for="fakultas" class="col-sm-4 col-form-label">Ingin Melakukan Perubahan Data Pada</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <select class="form-control <?= ($validation->hasError('lokasi_data')) ? 'is-invalid' : ''; ?>" id="lokasi_data" name="lokasi_data" value="<?= old('lokasi_data'); ?>">
                             <option selected></option>
                             <option value="SIAKAD">SIAKAD</option>
@@ -91,7 +91,7 @@
                 </div>
                 <div class="form-group row">
                     <label for="data" class="col-sm-4 col-form-label">Data Yang Ingin Di Ubah</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <div class="custom-control custom-checkbox custom-control-solid">
                             <input class="custom-control-input" id="ubah_nim" name="data[]" type="checkbox" value="NIM">
                             <label class="custom-control-label" for="ubah_nim">Nomor Induk Mahasiswa</label>
@@ -124,41 +124,96 @@
 
                 </div>
                 <div class="from-group row">
-                    <label for="akte" class="col-sm-4 col-xs-12 col-form-laber">Upload Akte kelahiran/surat lahir/kartu keluarga</label>
+                    <label for="akte" class="col-sm-4 col-xs-12 col-form-laber">Upload Akte kelahiran</label>
                     <div class="col-sm-6 col-xs-12">
                         <div class="custom-file">
-                            <input type="file" class="form-control <?= ($validation->hasError('akte')) ? 'is-invalid' : ''; ?>" id="akte" name="akte">
+                            <input type="file" class="form-control <?= ($validation->hasError('akte')) ? 'is-invalid' : ''; ?>" id="akte" name="akte" required>
                             <div class="invalid-feedback">
                                 <?= $validation->getError('akte'); ?>
                             </div>
-                            <small>File yang di upload harus berformat .pdf dan ukurannya tidak lebih dari 2MB</small>
+                            <small>File yang di upload harus berformat .pdf dan ukurannya tidak lebih dari 500kb</small>
 
                         </div>
                     </div>
                 </div>
                 <br>
                 <div class="from-group row">
-                    <label for="ktm" class="col-sm-4 col-xs-12 col-form-laber">Upload KTM (Kartu Tanda Mahasiswa)</label>
+                    <label for="akte" class="col-sm-4 col-xs-12 col-form-laber">Upload KTP</label>
                     <div class="col-sm-6 col-xs-12">
                         <div class="custom-file">
-                            <input type="file" class="form-control <?= ($validation->hasError('ktm')) ? 'is-invalid' : ''; ?>" id="ktm" name="ktm">
+                            <input type="file" class="form-control <?= ($validation->hasError('ktp')) ? 'is-invalid' : ''; ?>" id="ktp" name="ktp" required>
                             <div class="invalid-feedback">
-                                <?= $validation->getError('ktm'); ?>
+                                <?= $validation->getError('ktp'); ?>
                             </div>
-                            <small>File yang di upload harus berformat .pdf dan ukurannya tidak lebih dari 2MB</small>
+                            <small>File yang di upload harus berformat .pdf dan ukurannya tidak lebih dari 500kb</small>
+
                         </div>
                     </div>
                 </div>
                 <br>
                 <div class="from-group row">
-                    <label for="ijasah" class="col-sm-4 col-xs-12 col-form-laber">Upload Ijasah dan Transkrip (jika sudah lulus)</label>
+                    <label for="akte" class="col-sm-4 col-xs-12 col-form-laber">Upload Kartu Keluarga</label>
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="custom-file">
+                            <input type="file" class="form-control <?= ($validation->hasError('kk')) ? 'is-invalid' : ''; ?>" id="kk" name="kk" required>
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('kk'); ?>
+                            </div>
+                            <small>File yang di upload harus berformat .pdf dan ukurannya tidak lebih dari 500kb</small>
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="from-group row">
+                    <label for="ktm" class="col-sm-4 col-xs-12 col-form-laber">Upload KTM <small>(Jika tidak punya ktm harap kebagian kemahasiswaa untuk dibuatkan surat keterangan ktm)</small></label>
+
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="custom-file">
+                            <input type="file" class="form-control <?= ($validation->hasError('ktm')) ? 'is-invalid' : ''; ?>" id="ktm" name="ktm" required>
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('ktm'); ?>
+                            </div>
+                            <small>File yang di upload harus berformat .pdf dan ukurannya tidak lebih dari 500Kb</small>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="from-group row">
+                    <label for="ijasah" class="col-sm-4 col-xs-12 col-form-laber">Upload Ijasah <small>(jika sudah lulus)</small></label>
                     <div class="col-sm-6 col-xs-12">
                         <div class="custom-file">
                             <input type="file" class="form-control <?= ($validation->hasError('ijasah')) ? 'is-invalid' : ''; ?>" id="ijasah" name="ijasah">
                             <div class="invalid-feedback">
                                 <?= $validation->getError('ijasah'); ?>
                             </div>
-                            <small>File yang di upload harus berformat .pdf dan ukurannya tidak lebih dari 2MB</small>
+                            <small>File yang di upload harus berformat .pdf dan ukurannya tidak lebih dari 500Kb</small>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="from-group row">
+                    <label for="ijasah" class="col-sm-4 col-xs-12 col-form-laber">Upload Transkrip Nilai <small> (jika sudah lulus)</small></label>
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="custom-file">
+                            <input type="file" class="form-control <?= ($validation->hasError('transkrip')) ? 'is-invalid' : ''; ?>" id="transkrip" name="transkrip">
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('ijasah'); ?>
+                            </div>
+                            <small>File yang di upload harus berformat .pdf dan ukurannya tidak lebih dari 500kb</small>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="from-group row">
+                    <label for="ijasah" class="col-sm-4 col-xs-12 col-form-laber">Upload Ijasah Akte 4 <small>(Bagi Alumni Fakultas Keguruan dan Ilmu Pendidikan)</small> </label>
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="custom-file">
+                            <input type="file" class="form-control <?= ($validation->hasError('akte4')) ? 'is-invalid' : ''; ?>" id="akte4" name="akte4">
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('akte4'); ?>
+                            </div>
+                            <small>File yang di upload harus berformat .pdf dan ukurannya tidak lebih dari 500kb</small>
                         </div>
                     </div>
                 </div>

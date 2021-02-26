@@ -23,7 +23,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama Lengkap</th>
-                                <th>Hak Akses</th>
+                                <!-- <th>Hak Akses</th> -->
                                 <th>Role</th>
                                 <th>Action</th>
 
@@ -36,7 +36,7 @@
                                 <tr>
                                     <th scope="row"><?= $i++; ?></th>
                                     <td><a href="<?= base_url('admin/' . $user->userid); ?>" class=""><?= $user->fullname; ?></a></td>
-                                    <td><span class="badge badge"><?= $user->nama_fakultas; ?></span></td>
+                                    <!-- <td><span class="badge badge"><?= $user->nama_fakultas; ?></span></td> -->
                                     <td><span class="badge badge-<?= ($user->name == 'admin') ? 'success' : 'warning'; ?>"><?= $user->name; ?></span></td>
                                     <td>
                                         <form action="/admin/hapus" method="POST">

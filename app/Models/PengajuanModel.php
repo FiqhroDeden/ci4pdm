@@ -8,7 +8,7 @@ class PengajuanModel extends Model
 {
     protected $table = 'datapdm';
     protected $useTimestamps = true;
-    protected $allowedFields = ['id_pengirim', 'nama_lengkap', 'nim', 'nomor', 'fakultas', 'prodi', 'lokasi_data', 'data', 'akte', 'ktm', 'ijasah', 'surat', 'status', 'keterangan'];
+    protected $allowedFields = ['id_pengirim', 'nama_lengkap', 'nim', 'nomor', 'fakultas', 'prodi', 'lokasi_data', 'data', 'akte', 'ktp', 'kk', 'ktm', 'ijasah', 'transkrip', 'akte4', 'status', 'keterangan'];
 
     public function pdm($id = false)
     {
